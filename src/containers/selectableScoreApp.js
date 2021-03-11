@@ -7,6 +7,7 @@ import SelectionHandler from "../annotations/selectionHandler.js";
 import AnnotationList from "../annotations/annotationList.js";
 import ReactPlayer from "react-player";
 import Modal from "react-modal";
+import MultimediaComponent from "trompa-multimodal-component";
 
 //Modal.setAppElement("root");
 //
@@ -849,6 +850,9 @@ export default class SelectableScoreApp extends Component {
             }
           }}
         />
+        <div>
+          <MultimediaComponent ce_url="" onSelect={this.callback} />{" "}
+        </div>
       </div>
     );
   }
