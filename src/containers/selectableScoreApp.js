@@ -7,7 +7,6 @@ import SelectionHandler from "../annotations/selectionHandler.js";
 import AnnotationList from "../annotations/annotationList.js";
 import ReactPlayer from "react-player";
 import Modal from "react-modal";
-import RenditionsPlaylist from "../annotations/renditionsPlaylist.js";
 
 //Modal.setAppElement("root");
 //
@@ -816,8 +815,6 @@ export default class SelectableScoreApp extends Component {
         />
         {/*as buttonContent that you'd like to function as a clickable prev page
         button */}
-
-        <RenditionsPlaylist />
 
         <AnnotationList
           allEntries={this.state.currentAnnotation}
