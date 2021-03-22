@@ -733,6 +733,7 @@ export default class SelectableScoreApp extends Component {
                   this.onReceiveAnnotationContainerContent
                 }
                 toggleAnnotationRetrieval={this.state.toggleAnnotationRetrieval}
+                selectionArea=".scoreContainer"
               />
             </div>
             <div className="prevPageButton">
