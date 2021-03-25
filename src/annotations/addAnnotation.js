@@ -32,6 +32,27 @@ export class Addannotation extends React.Component {
 
     return (
       <div>
+        {this.props.annotationType === "playlist" && (
+          <div>
+            <input
+              type="text"
+              value={this.state.value}
+              name="value"
+              placeholder="enter link here"
+              onChange={this.onChange}
+              className="sizedTextBox"
+            />
+            <span> with title: </span>
+            <input
+              type="text"
+              placeholder="title"
+              name="seconds"
+              value={this.state.seconds}
+              onChange={this.onTimeChange}
+              className="sizedTextBox"
+            />
+          </div>
+        )}
         {this.props.annotationType !== "cueMedia" && (
           <textarea
             className="textArea"

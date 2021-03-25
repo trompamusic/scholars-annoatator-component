@@ -11,6 +11,10 @@ body {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .showReply {
   display: block;
 }
@@ -152,6 +156,82 @@ body {
   right: 60px; */
 }
 
+.zoomOut {
+  margin-left: 54%;
+  position: absolute;
+  bottom: 91%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+
+.zoomOut svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+
+.zoomIn {
+  margin-left: 56%;
+  position: absolute;
+  bottom: 91%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+
+.zoomIn svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+
+.prevPageButton {
+  margin-left: 52%;
+  position: absolute;
+  bottom: 91%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+
+.prevPageButton svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+
+.nextPageButton {
+  margin-left: 58%;
+  position: absolute;
+  bottom: 91%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+
+.nextPageButton svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+}
+
 .showRepliesButton:hover {
   background-color: gray;
 }
@@ -209,6 +289,15 @@ body {
   padding-left: 5px;
 }
 
+.playlist {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 200px;
+  max-width: 631px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
 .quoteContent {
   background-color: rgba(204, 204, 204, 0.5);
   padding: 1%;
@@ -242,6 +331,30 @@ body {
   border-bottom: 0.5px solid rgba(136, 136, 136, 0.5);
   padding-bottom: 1%;
   overflow-y: auto;
+}
+
+.playlistItem {
+  display: block;
+  border-top: 0.5px solid rgba(136, 136, 136, 0.5);
+  border-right: 0.5px solid rgba(136, 136, 136, 0.5);
+  list-style-type: none;
+  position: relative;
+  border-bottom: 0.5px solid rgba(136, 136, 136, 0.5);
+  padding-bottom: 1%;
+  overflow-y: auto;
+  max-width: 631px;
+  background-color: rgb(208, 208, 208);
+  text-align: center;
+}
+
+.playlistItem p {
+  margin-bottom: 0px;
+}
+
+.playlistItem iframe {
+  border: none;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .annoItem:hover {
@@ -310,49 +423,10 @@ body {
   margin-bottom: 5px;
 }
 
-.prevPageButton {
-  border: 1px solid white;
-  background-color: rgb(215, 215, 215);
-  padding: 5px 12px;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-  display: inline-block;
-  transition-duration: 0.4s;
-
-  left: 50%;
-  position: absolute;
-  bottom: 90%;
-}
-
-.prevPageButton:hover {
-  background-color: rgb(175, 175, 175);
-}
-
-.nextPageButton {
-  border: 1px solid white;
-  background-color: rgb(215, 215, 215);
-  padding: 5px 12px;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-
-  transition-duration: 0.4s;
-
-  position: absolute;
-  bottom: 90%;
-  left: 60%;
-}
-
-.nextPageButton:hover {
-  background-color: rgb(175, 175, 175);
-}
-
 .form {
   display: inline-block;
 }
+
 .renditionButton {
   padding: 10px;
   border-radius: 4px;
@@ -361,7 +435,13 @@ body {
   cursor: pointer;
   width: 630px;
   margin-left: 5px;
+  color: white;
+  background-color: lightsalmon;
+  outline: rgb(211, 122, 86);
+  border: none;
+  margin-top: 5px;
 }
+
 .enabledSubmitButton {
   border: none;
   background-color: rgb(161, 219, 161);
@@ -370,11 +450,12 @@ body {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  /* //display: inline-flexbox; */
+  /* display: inline-flexbox; */
   transition-duration: 0.4s;
   width: 315px;
   opacity: 1;
   color: white;
+  height: 60px;
 }
 
 .disabledSubmitButton {
@@ -383,7 +464,7 @@ body {
   padding: 20px;
   border-radius: 4px;
   text-align: center;
-  font-size: 16px;
+  font-size: 1em;
   cursor: pointer;
   /* display: inline-flexbox; */
   transition-duration: 0.4s;

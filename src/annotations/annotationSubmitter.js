@@ -68,6 +68,19 @@ export class AnnotationSubmitter extends React.Component {
           creator: this.props.creator,
         };
 
+      case "playlist":
+        return {
+          "@context": "http://www.w3.org/ns/anno.jsonld",
+          target: this.props.selection.map((elem) => {
+            return { id: this.props.uri + "#" + elem.getAttribute("id") };
+          }), //this takes the measure id selected by the user
+          type: "Annotation",
+          body: [{ id: uuidv4(), type: "TextualBody", seconds, value }], //this takes the user input
+          motivation: "trompa:playlist",
+          created: new Date().toISOString(),
+          creator: this.props.creator,
+        };
+
       case "replying":
         return {
           "@context": "http://www.w3.org/ns/anno.jsonld",
@@ -136,7 +149,17 @@ export class AnnotationSubmitter extends React.Component {
           </label>
           <label>
             <input
-              title="links a media content to the annotation"
+              title="playlist"
+              type="radio"
+              value="playlist"
+              name="annotationType"
+              onChange={this.props.onAnnoTypeChange}
+            />
+            Playlist
+          </label>
+          <label>
+            <input
+              title="will be used when the reply button is clicked"
               type="radio"
               value="reply"
               name="annotationType"

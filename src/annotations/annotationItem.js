@@ -690,6 +690,9 @@ class AnnotationItem extends React.Component {
           </div>
         );
       //FIXME: if deleting root anno what happens to replies? Still sittin in solidPOD but are not rendered... needs discussion
+      case "trompa:playlist":
+        return;
+
       case "replying":
         return (
           <div
