@@ -151,7 +151,7 @@ export class AnnotationSubmitter extends React.Component {
             />
             Image
           </label>
-          <label>
+          {/* <label>
             <input
               title="playlist"
               type="radio"
@@ -161,7 +161,7 @@ export class AnnotationSubmitter extends React.Component {
               checked={this.props.annotationType === "playlist"}
             />
             Playlist
-          </label>
+          </label> */}
           <label>
             <input
               title="will be used when the reply button is clicked"

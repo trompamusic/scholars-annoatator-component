@@ -62,8 +62,10 @@ export default function SolidWrapper(props) {
         <p title="close the current session and quit the app">
           <LogoutButton className="logoutButton">Log out</LogoutButton>
         </p>
-        <p>Specify the annotation container path inside your Pod:</p>
-        <div>
+        <p className="noVis">
+          Specify the annotation container path inside your Pod:
+        </p>
+        <div className="noVis">
           <input
             title="enter your preferred POD folder"
             type="text"

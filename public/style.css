@@ -184,6 +184,10 @@ circle {
   top: 20%;
 }
 
+.noVis {
+  visibility: hidden;
+}
+
 .replyButton:hover {
   background-color: gray;
 }
