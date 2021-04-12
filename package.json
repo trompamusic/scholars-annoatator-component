@@ -23,6 +23,8 @@
     "@solid/react": "^1.9.0",
     "browserslist": "^4.11.0",
     "fibers": "^5.0.0",
+    "interweave": "^12.7.1",
+    "interweave-autolink": "^4.4.1",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",

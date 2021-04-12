@@ -2,6 +2,8 @@
 import React from "react";
 import auth from "solid-auth-client";
 import Toggle from "react-toggle";
+import Interweave from "interweave";
+import { UrlMatcher } from "interweave-autolink";
 import {
   getSolidDatasetWithAcl,
   hasResourceAcl,
@@ -590,7 +592,14 @@ class AnnotationItem extends React.Component {
           >
             {" "}
             {commonAnnoComponents}
-            <p>{bodyD}</p>
+            {/* <p>{bodyD}</p> */}
+            <p>
+              <Interweave
+                content={bodyD}
+                matchers={[new UrlMatcher("url")]}
+                newWindow={true}
+              />
+            </p>
             {replyButtonsCluster}
           </div>
         );

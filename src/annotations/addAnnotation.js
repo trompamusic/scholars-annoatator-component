@@ -2,6 +2,7 @@
 /* also the input field changes based on the chosen annotation motivation*/
 import React from "react";
 import SubmitButton from "selectable-score/lib/submit-button.js";
+import TextArea from "./richTextArea";
 
 export class Addannotation extends React.Component {
   state = {
@@ -12,14 +13,15 @@ export class Addannotation extends React.Component {
   };
   onChange = (e) => this.setState({ value: e.target.value });
 
-  onTimeChange = (e) =>
-    this.setState({ seconds: e.target.value }, () =>
-      console.log(this.state.seconds)
-    );
+  onTimeChange = (e) => this.setState({ seconds: e.target.value });
 
   wipeState() {
     this.setState({ value: "", seconds: "" });
   }
+
+  onMarkupInsert = (markup) => {
+    this.setState({ value: this.state.value.concat(markup) });
+  };
 
   render() {
     //packages the two states in one variable. The submithandlerArgs then are read with .value and .seconds from the submitHandler function
@@ -32,7 +34,7 @@ export class Addannotation extends React.Component {
 
     return (
       <div>
-        {this.props.annotationType === "playlist" && (
+        {/* {this.props.annotationType === "playlist" && (
           <div>
             <input
               type="text"
@@ -52,15 +54,15 @@ export class Addannotation extends React.Component {
               className="sizedTextBox"
             />
           </div>
-        )}
+        )} */}
         {this.props.annotationType !== "cueMedia" && (
-          <textarea
-            className="textArea"
+          <TextArea
             id="annotationContent"
             name="value"
             value={this.state.value}
             placeholder={this.props.placeholder}
             onChange={this.onChange}
+            onMarkupInsert={this.onMarkupInsert}
           />
         )}
         {this.props.annotationType === "cueMedia" && (
